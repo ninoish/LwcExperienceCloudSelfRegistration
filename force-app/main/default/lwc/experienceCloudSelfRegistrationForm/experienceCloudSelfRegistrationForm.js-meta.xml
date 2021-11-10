@@ -1,0 +1,71 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>52.0</apiVersion>
+	<isExposed>true</isExposed>
+	<masterLabel>LWC Experience Cloud Self Registration Form</masterLabel>
+	<targets>
+		<target>lightningCommunity__Page</target>
+		<target>lightningCommunity__Default</target>
+	</targets>
+	<targetConfigs>
+		<targetConfig targets="lightningCommunity__Default">
+			<property
+        name="accountId"
+        type="String"
+        description="AccountId for creating the user. If not specified, it will create a PersonAccount if possible for B2C scenario. Or otherwise if it's in a site, the site's self-registration accountId will be used."
+        label="Account ID"
+      />
+			<property name="startUrl" type="String" label="Start URL" />
+			<property
+        name="regConfirmUrl"
+        type="String"
+        label="Registration Confirm URL"
+        required="true"
+      />
+			<property
+        name="firstnameLabel"
+        type="String"
+        default="First Name"
+        label="Firstname Label"
+        placeholder="First Name"
+      />
+			<property
+        name="lastnameLabel"
+        type="String"
+        default="Last Name"
+        label="Lastname Label"
+        placeholder="Last Name"
+      />
+			<property
+        name="emailLabel"
+        type="String"
+        default="Email"
+        label="Email Label"
+        placeholder="Email"
+      />
+			<property
+        name="includePassword"
+        type="Boolean"
+        label="Include Password Field"
+      />
+			<property
+        name="passwordLabel"
+        type="String"
+        default="Password"
+        label="Password Label"
+      />
+			<property
+        name="passwordConfirmLabel"
+        type="String"
+        default="Confirm Password"
+        label="Password Confirm Label"
+      />
+			<property
+        name="registerButtonLabel"
+        type="String"
+        default="Sign up"
+        label="Register Button Label"
+      />
+			
+		</targetConfig>
+	</targetConfigs>
+</LightningComponentBundle>

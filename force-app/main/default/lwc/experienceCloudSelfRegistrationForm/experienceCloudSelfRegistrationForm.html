@@ -1,0 +1,59 @@
+<template>
+  <template if:true={hasError}> </template>
+
+  <lightning-input
+    type="text"
+    label={firstnameLabel}
+    value={firstname}
+    onchange={handleInputChange}
+    data-name="firstname"
+  ></lightning-input>
+
+  <lightning-input
+    type="text"
+    label={lastnameLabel}
+    value={lastname}
+    onchange={handleInputChange}
+    data-name="lastname"
+  ></lightning-input>
+
+  <lightning-input
+    type="email"
+    label={emailLabel}
+    value={email}
+    onchange={handleInputChange}
+    data-name="email"
+  ></lightning-input>
+
+  <template if:true={includePassword}>
+    <lightning-input
+      type="password"
+      label={passwordLabel}
+      value={password}
+      onchange={handleInputChange}
+      data-name="password"
+    ></lightning-input>
+    <lightning-input
+      type="password"
+      label={passwordConfirmLabel}
+      value={passwordConfirm}
+      onchange={handleInputChange}
+      data-name="passwordConfirm"
+    ></lightning-input>
+  </template>
+
+  <template if:true={isRegistering}>
+    <lightning-button
+      label={submitButtonLabel}
+      disabled
+      variant="brand"
+    ></lightning-button>
+  </template>
+  <template if:false={isRegistering}>
+    <lightning-button
+      label={registerButtonLabel}
+      onclick={register}
+      variant="brand"
+    ></lightning-button>
+  </template>
+</template>
